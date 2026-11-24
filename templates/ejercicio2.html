@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Ejercicio 2 - Comparar nombres</title>
+ <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+</head>
+<body>
+
+ <div class="contenedor">
+ <h1>Ejercicio 2</h1>
+ <h2>Comparar nombres</h2>
+
+ <p>Ingresa tres nombres diferentes:</p>
+
+ <form method="POST">
+ <label>Primer nombre:</label>
+ <input type="text" name="nombre1" required>
+
+ <label>Segundo nombre:</label>
+ <input type="text" name="nombre2" required>
+
+ <label>Tercer nombre:</label>
+ <input type="text" name="nombre3" required>
+
+ <button type="submit">Comparar nombres</button>
+ </form>
+
+ {% if error %}
+ <p class="error">{{ error }}</p>
+ {% endif %}
+
+ <p><a href="{{ url_for('inicio') }}">Volver al menú principal</a></p>
+ </div>
+
+</body>
+</html>

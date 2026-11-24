@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ejercicio 1 - Notas y asistencia</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+</head>
+<body>
+
+<div class="contenedor">
+<h1>Ejercicio 1</h1>
+<h2>Promedio de notas y asistencia</h2>
+
+<form method="POST">
+<label>Primera nota (10 a 70):</label>
+<input type="number" name="nota1" min="10" max="70" step="0.1" required>
+
+<label>Segunda nota (10 a 70):</label>
+<input type="number" name="nota2" min="10" max="70" step="0.1" required>
+
+<label>Tercera nota (10 a 70):</label>
+<input type="number" name="nota3" min="10" max="70" step="0.1" required>
+
+<label>Porcentaje de asistencia (0 a 100):</label>
+<input type="number" name="asistencia" min="0" max="100" step="0.1" required>
+
+<button type="submit">Calcular resultado</button>
+</form>
+
+{% if error %}
+<p class="error">{{ error }}</p>
+{% endif %}
+
+<p><a href="{{ url_for('inicio') }}">Volver al menú principal</a></p>
+</div>
+
+</body>
+</html>
